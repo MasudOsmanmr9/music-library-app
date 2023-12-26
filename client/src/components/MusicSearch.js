@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import AudioPlayer from 'react-audio-player';
-import CustomAudioPlayer from "./CustomAudioPlayer";
+// import CustomAudioPlayer from "./CustomAudioPlayer";
 const MusicSearch = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
