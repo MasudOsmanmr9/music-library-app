@@ -35,8 +35,8 @@ const MusicSearch = () => {
       {/* <CustomAudioPlayer audioSrc="/pahlevi_ma.mp3" /> */}
       {selectedTrack && (
         <AudioPlayer
-          // src={selectedTrack.url}
-          src="/pahlevi_ma.mp3"
+          src={selectedTrack.url}
+          // src="/pahlevi_ma.mp3"
           onEnded={() => setSelectedTrack(null)}
           autoPlay
           controls
