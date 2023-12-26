@@ -8,8 +8,12 @@ This is a full-stack music application built using the MERN stack (MongoDB, Expr
 ## Client (Frontend)
 
 The frontend is developed using `Create React App`. Make sure you have Node.js installed (version 16.20.2 is recommended) or any node 16 version. You can use NVM (Node Version Manager) to manage your Node.js versions. 
-
-1. Install dependencies:
+after cloning or downloading the project
+1. go to `music-library-app` directory
+        
+        cd music-library-app
+        cd client
+2. Install dependencies:
 
         npm install
 
@@ -19,18 +23,24 @@ The frontend is developed using `Create React App`. Make sure you have Node.js i
 
 The client will run on the default port 3000.
 
-Server (Backend)
+##Server (Backend)
 The backend is built with Node.js and Express.js. MongoDB is used as the database.
 
 Install MongoDB if not already installed.
 
-Install dependencies:
+after cloning or downloading the project
+1. go to `music-library-app` directory
+        
+        cd music-library-app
+        cd client
 
-    npm install
+2.  Install dependencies:
 
-Start the server:
+        npm install
 
-    npm start
+3. Start the server:
+
+        npm start
 
 The server will run on port 3001 by default. You can customize the ports as needed.
 
