@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "d594099a-fad1-4534-acf3-f4d79da77089",
+		"name": "music",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4163272"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/api/v1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/music/658a023e605ee6344ad9e561",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"music",
+						"658a023e605ee6344ad9e561"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/music",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Send Me An Angel\",\r\n    \"artist\": \"scorpions\",\r\n    \"url\": \"https://www.youtube.com/watch?v=1UUYjd2rjsE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/music",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"music"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "music search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/music/search?q=example",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"music",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "example"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
