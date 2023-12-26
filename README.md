@@ -44,7 +44,7 @@ after cloning or downloading the project
 
 The server will run on port 3001 by default. You can customize the ports as needed.
 
-#####we have provided postmans request collections export file, if you want you can import it and test apis form your end!
+##### we have provided postmans request collections export file in `server > utils` folder, if you want you can import it and test apis form your end!
 
 Feel free to adjust the project configuration according to your preferences.
 
