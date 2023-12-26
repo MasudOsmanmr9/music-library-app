@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../utils/axiosInstance'
+import { useNavigate } from 'react-router-dom';
+
 const CreateMusic = () => {
   const [formData, setFormData] = useState({
     title: '',
     artist: '',
     url: '',
   });
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -14,13 +16,14 @@ const CreateMusic = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Implement the logic to send the form data to the server (POST request)
-    const response = await axios.post('http://localhost:3001/api/v1/music',formData);
-    if(response.status == 201){
+    const response = await axiosInstance.post('/api/v1/music',formData);
+    if(response.status === 201){
         setFormData({
             title: '',
             artist: '',
             url: '',
           })
+          navigate("/music-lists");
     }
     console.log('Form submitted:', response ,formData);
   };

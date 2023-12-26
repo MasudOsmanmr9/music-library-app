@@ -5,17 +5,15 @@ exports.trackSearch = async (req,res) => {
     const query = req.query.track;
 
     try { 
-        const results = await Music.find({ $or: [{ title: new RegExp(query, 'i') }, { artist: new RegExp(query, 'i') }] });
+        const tracks = await Music.find({ $or: [{ title: new RegExp(query, 'i') }, { artist: new RegExp(query, 'i') }] });
         res.status(200).json({
             status:"success",
-            data:{
-                tracks: results
-            }
+            tracks
         });
     }catch(e){
         console.log(e);
         res.status(400).json({
-            status:"failsssssssssss",
+            status:"fail",
         })
     }
 }
@@ -57,14 +55,11 @@ exports.getMusics = async (req, res) => {
 exports.getMusic = async (req, res) => {
     const { id } = req.params;
     try {
-      const music = await Post.findById(id);
+      const music = await Music.findById(id);
   
       res.status(200).json({
         status: "succes",
-  
-        data: {
-          music,
-        },
+        music
       });
     } catch (e) {
       res.status(400).json({
@@ -79,7 +74,10 @@ exports.updateMusic = async (req, res) => {
   
     try {
       const updatedMusic = await Music.findByIdAndUpdate(id, { title, artist, url }, { new: true });
-      res.json(updatedMusic);
+      res.status(200).json({
+        status: "succes",
+        updatedMusic
+      });
     } catch (error) {
       console.error(error);
       res.status(500).send('Internal Server Error');
@@ -91,7 +89,10 @@ exports.deleteMusic = async (req, res) => {
   
     try {
       const deletedMusic = await Music.findByIdAndDelete(id);
-      res.json(deletedMusic);
+      res.status(200).json({
+        status: "succes",
+        deletedMusic
+      });
     } catch (error) {
       console.error(error);
       res.status(500).send('Internal Server Error');

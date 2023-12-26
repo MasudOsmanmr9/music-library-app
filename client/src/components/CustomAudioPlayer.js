@@ -68,7 +68,7 @@ function CustomAudioPlayer({ audioSrc }) {
       </div>
 
       <button onClick={handlePlayPause}>
-        <span class="material-symbols-rounded">
+        <span className="material-symbols-rounded">
           {isPlaying ? "pause" : "play_arrow"}
         </span>
       </button>

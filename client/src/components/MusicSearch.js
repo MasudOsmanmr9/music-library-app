@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../utils/axiosInstance'
 import AudioPlayer from 'react-audio-player';
 // import CustomAudioPlayer from "./CustomAudioPlayer";
 const MusicSearch = () => {
@@ -9,9 +9,9 @@ const MusicSearch = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/v1/music/search?track=${query}`);
-      console.log(response.data.data.tracks);
-      setResults(response.data.data.tracks);
+      const response = await axiosInstance.get(`/api/v1/music/search?track=${query}`);
+      console.log(response.data.tracks);
+      setResults(response.data.tracks);
     } catch (error) {
       console.error(error);
     }
@@ -19,8 +19,8 @@ const MusicSearch = () => {
 
   return (
     <div className='pt-5 mt-5'>
-      <div class="card shadow mb-5 bg-card">
-        <div class="card-body">
+      <div className="card shadow mb-5 bg-card">
+        <div className="card-body">
           <input type="text" value={query} className='form-control' onChange={(e) => setQuery(e.target.value)} />
           <button className='btn btn-secondary my-3' onClick={handleSearch}>Search track</button>
         </div>
